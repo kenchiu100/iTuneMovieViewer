@@ -11,11 +11,26 @@ import UIKit
 class MoviesViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.dataSource = self
         tableView.delegate = self
+        
+        let url = URL(string: "https://itunes.apple.com/us/rss/topmovies/limit=25/json")!
+        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+        let task: URLSessionDataTask = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+            if let data = data {
+                if let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
+                    print(dataDictionary)
+                }
+            }
+        }
+        task.resume()
+        
         // Do any additional setup after loading the view.
     }
 
