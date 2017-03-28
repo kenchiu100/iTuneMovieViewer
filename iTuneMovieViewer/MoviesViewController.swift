@@ -11,7 +11,7 @@ import UIKit
 class MoviesViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    
+    var movies: [NSDictionary]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,13 +19,18 @@ class MoviesViewController: UIViewController,UITableViewDataSource, UITableViewD
         tableView.dataSource = self
         tableView.delegate = self
         
+        //Get data from the api
         let url = URL(string: "https://itunes.apple.com/us/rss/topmovies/limit=25/json")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task: URLSessionDataTask = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
             if let data = data {
                 if let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
-                    print(dataDictionary)
+//                    print(dataDictionary)
+                    //Put the dataDitonary to movies for later use
+                    self.movies = dataDictionary["feed.entry"] as? [NSDictionary]
+                    print(self.movies)
+                    self.tableView.reloadData()
                 }
             }
         }
@@ -41,12 +46,23 @@ class MoviesViewController: UIViewController,UITableViewDataSource, UITableViewD
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 25
+        //if movies is not nil
+        if let movies = movies{
+            return movies.count
+        }else{
+            return 0
+        }
+        
     }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath)
+        
+        let movie = movies![indexPath.row]
+        let title = movie["title.lable"] as! String
+        
+        cell.textLabel!.text = title
         return cell
     }
 
