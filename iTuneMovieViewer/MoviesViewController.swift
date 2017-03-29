@@ -27,13 +27,8 @@ class MoviesViewController: UIViewController,UITableViewDataSource, UITableViewD
             if let data = data {
                 if let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
                     
-                    //Put the dataDitonary to movies for later use
-                    
                     let feed = dataDictionary["feed"] as! NSDictionary
-                    
                     self.movies = feed["entry"] as? NSArray
-            
-                    print(self.movies)
                     self.tableView.reloadData()
                 }
             }
@@ -63,11 +58,9 @@ class MoviesViewController: UIViewController,UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath)
         let movie = self.movies![indexPath.row] as! NSDictionary
-        let titleDic = movie["title"] as? [String: Any]
+        let titleDic = movie["title"] as? NSDictionary
         let title = titleDic?["label"] as! String
         
-//        let title = movie["title"] as String
-//
         cell.textLabel!.text = title
         return cell
     }
