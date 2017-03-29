@@ -58,6 +58,7 @@ class MoviesViewController: UIViewController,UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
         let movie = self.movies![indexPath.row] as! NSDictionary
+        
         //get the title
         let titleDic = movie["title"] as? NSDictionary
         let title = titleDic?["label"] as! String
@@ -68,11 +69,18 @@ class MoviesViewController: UIViewController,UITableViewDataSource, UITableViewD
         //get the price
         let priceDic = movie["im:price"] as? NSDictionary
         let price = priceDic?["label"] as! String
+        //get the poster
+        let imageDic = movie["im:image"] as! NSArray
+        let image60 = imageDic[0] as! NSDictionary // for the height:60
+        let imageURL = image60["label"] as! NSURL
+        
+        
 
         
         cell.titleLabel.text = title
         cell.releaseDateLabel.text = releaseDate
         cell.priceLabel.text = price
+//        cell.imageView = setImage
         
 //        cell.priceLabel.text = "\(price)"
         
