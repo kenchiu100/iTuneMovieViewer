@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE10D5231E8B813900D36F52 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE10D5221E8B813900D36F52 /* MovieCell.swift */; };
 		BE88091D1E89CDF5001ED024 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE88091C1E89CDF5001ED024 /* AppDelegate.swift */; };
 		BE8809221E89CDF5001ED024 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8809201E89CDF5001ED024 /* Main.storyboard */; };
 		BE8809241E89CDF5001ED024 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE8809231E89CDF5001ED024 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE10D5221E8B813900D36F52 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		BE8809191E89CDF5001ED024 /* iTuneMovieViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTuneMovieViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE88091C1E89CDF5001ED024 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE8809211E89CDF5001ED024 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -35,6 +37,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE10D5211E8B802400D36F52 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BE10D5221E8B813900D36F52 /* MovieCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		BE10D5241E8B815E00D36F52 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE88092E1E89CF3B001ED024 /* MoviesViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		BE8809101E89CDF5001ED024 = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +72,13 @@
 		BE88091B1E89CDF5001ED024 /* iTuneMovieViewer */ = {
 			isa = PBXGroup;
 			children = (
+				BE10D5241E8B815E00D36F52 /* View Controllers */,
+				BE10D5211E8B802400D36F52 /* Views */,
 				BE88091C1E89CDF5001ED024 /* AppDelegate.swift */,
 				BE8809201E89CDF5001ED024 /* Main.storyboard */,
 				BE8809231E89CDF5001ED024 /* Assets.xcassets */,
 				BE8809251E89CDF5001ED024 /* LaunchScreen.storyboard */,
 				BE8809281E89CDF5001ED024 /* Info.plist */,
-				BE88092E1E89CF3B001ED024 /* MoviesViewController.swift */,
 			);
 			path = iTuneMovieViewer;
 			sourceTree = "<group>";
@@ -138,6 +157,7 @@
 			files = (
 				BE88091D1E89CDF5001ED024 /* AppDelegate.swift in Sources */,
 				BE88092F1E89CF3B001ED024 /* MoviesViewController.swift in Sources */,
+				BE10D5231E8B813900D36F52 /* MovieCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +321,7 @@
 				BE88092D1E89CDF5001ED024 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

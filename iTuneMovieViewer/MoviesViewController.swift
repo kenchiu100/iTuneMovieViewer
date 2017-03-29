@@ -56,12 +56,27 @@ class MoviesViewController: UIViewController,UITableViewDataSource, UITableViewD
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
         let movie = self.movies![indexPath.row] as! NSDictionary
+        //get the title
         let titleDic = movie["title"] as? NSDictionary
         let title = titleDic?["label"] as! String
+        //get the release date
+        let releaseDateDic = movie["im:releaseDate"] as! NSDictionary
+        let attributesDic = releaseDateDic["attributes"] as! NSDictionary
+        let releaseDate = attributesDic["label"] as! String
+        //get the price
+        let priceDic = movie["im:price"] as? NSDictionary
+        let price = priceDic?["label"] as! String
+
         
-        cell.textLabel!.text = title
+        cell.titleLabel.text = title
+        cell.releaseDateLabel.text = releaseDate
+        cell.priceLabel.text = price
+        
+//        cell.priceLabel.text = "\(price)"
+        
+        
         return cell
     }
 
