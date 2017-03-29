@@ -76,7 +76,6 @@ class MoviesViewController: UIViewController,UITableViewDataSource, UITableViewD
         print(imagelink)
         let imageUrlString = imagelink["label"] as! String
         let imageUrl = URL(string: imageUrlString)
-
         
         cell.titleLabel.text = title
         cell.releaseDateLabel.text = releaseDate
