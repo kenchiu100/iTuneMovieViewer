@@ -80,6 +80,8 @@ class MoviesViewController: UIViewController,UITableViewDataSource, UITableViewD
         cell.titleLabel.text = title
         cell.releaseDateLabel.text = releaseDate
         cell.priceLabel.text = price
+        
+        
 //        cell.imageView = setImage
         
 //        cell.priceLabel.text = "\(price)"
