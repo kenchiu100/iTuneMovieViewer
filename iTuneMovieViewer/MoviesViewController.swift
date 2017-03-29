@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AFNetworking
 
 class MoviesViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
 
@@ -71,15 +72,16 @@ class MoviesViewController: UIViewController,UITableViewDataSource, UITableViewD
         let price = priceDic?["label"] as! String
         //get the poster
         let imageDic = movie["im:image"] as! NSArray
-        let image60 = imageDic[0] as! NSDictionary // for the height:60
-        let imageURL = image60["label"] as! NSURL
-        
-        
+        let imagelink = imageDic[1] as! NSDictionary // for the height:60
+        print(imagelink)
+        let imageUrlString = imagelink["label"] as! String
+        let imageUrl = URL(string: imageUrlString)
 
         
         cell.titleLabel.text = title
         cell.releaseDateLabel.text = releaseDate
         cell.priceLabel.text = price
+        cell.posterView.setImageWith(imageUrl!)
         
         
 //        cell.imageView = setImage
