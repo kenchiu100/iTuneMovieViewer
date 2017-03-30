@@ -81,14 +81,15 @@ class MoviesViewController: UIViewController,UITableViewDataSource, UITableViewD
         //get the poster
         let imageDic = movie["im:image"] as! NSArray
         let imagelink = imageDic[2] as! NSDictionary // for the height:60
-//        print(imagelink)
-        let imageUrlString = imagelink["label"] as! String
-        let imageUrl = URL(string: imageUrlString)
         
+        if let imageUrlString = imagelink["label"] as? String{
+        let imageUrl = URL(string: imageUrlString)
+            cell.posterView.setImageWith(imageUrl!)
+            
+        }
         cell.titleLabel.text = title
         cell.releaseDateLabel.text = releaseDate
         cell.priceLabel.text = price
-        cell.posterView.setImageWith(imageUrl!)
         return cell
     }
     

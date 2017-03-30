@@ -21,7 +21,37 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(movie)
+        //get the title
+        let titleDic = movie["title"] as? NSDictionary
+        let title = titleDic?["label"] as! String
+        //get the overview
+        let summaryDic = movie["summary"] as? NSDictionary
+        let summary = summaryDic?["label"] as! String
+        
+        //get the release date
+        let releaseDateDic = movie["im:releaseDate"] as! NSDictionary
+        let attributesDic = releaseDateDic["attributes"] as! NSDictionary
+        let releaseDate = attributesDic["label"] as! String
+        //get the price
+        let priceDic = movie["im:price"] as? NSDictionary
+        let price = priceDic?["label"] as! String
+        //get the poster
+        let imageDic = movie["im:image"] as! NSArray
+        let imagelink = imageDic[2] as! NSDictionary // for the height:60
+        
+        if let imageUrlString = imagelink["label"] as? String{
+            let imageUrl = URL(string: imageUrlString)
+            posterImageView.setImageWith(imageUrl!)
+            
+        }
+        
+        
+        titleLabel.text = title
+        overviewLabel.text = summary
+        releaseDateLabel.text = releaseDate
+        priceLabel.text = price
+        
+
 
         // Do any additional setup after loading the view.
     }
