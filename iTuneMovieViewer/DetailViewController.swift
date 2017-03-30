@@ -16,10 +16,12 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
     @IBOutlet weak var viewBtn: UIButton!
+    var movie: NSDictionary!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(movie)
 
         // Do any additional setup after loading the view.
     }
