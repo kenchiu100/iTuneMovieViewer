@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Movies View Controller-->
+        <!--Top 25 Movies-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MoviesViewController" customModule="iTuneMovieViewer" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,11 +27,11 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="91" id="bpW-bS-ukH" customClass="MovieCell" customModule="iTuneMovieViewer" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="91" id="bpW-bS-ukH" customClass="MovieCell" customModule="iTuneMovieViewer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MovieCell" tableViewCell="bpW-bS-ukH" id="IOA-aD-bvl">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="90.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="k1A-xt-U8y">
@@ -66,6 +66,7 @@
                                             <outlet property="priceLabel" destination="rHs-Xx-TnR" id="EQu-Oc-Qou"/>
                                             <outlet property="releaseDateLabel" destination="oPF-6w-9Ng" id="PDT-0c-AIa"/>
                                             <outlet property="titleLabel" destination="k1A-xt-U8y" id="Gjz-L1-p5v"/>
+                                            <segue destination="eCn-py-HFi" kind="push" id="hdt-At-25x"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -73,7 +74,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="wbf-Zr-gg8"/>
+                    <navigationItem key="navigationItem" title="Top 25 Movies" id="wbf-Zr-gg8"/>
                     <connections>
                         <outlet property="movieSearchBar" destination="J03-wI-LHx" id="Sfb-5Z-GdU"/>
                         <outlet property="tableView" destination="UxI-iy-LZO" id="0YK-5Q-BjF"/>
@@ -81,7 +82,76 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="102" y="-146"/>
+            <point key="canvasLocation" x="-114" y="-82"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="bg8-LK-0VU">
+            <objects>
+                <viewController id="eCn-py-HFi" customClass="DetailViewController" customModule="iTuneMovieViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="has-R1-Lpv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" misplaced="YES" id="2EE-ir-0qP">
+                                <rect key="frame" x="0.0" y="425" width="375" height="242"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZQh-fO-6eE">
+                                        <rect key="frame" x="8" y="17" width="352" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="November 23,2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iGW-o0-eRH">
+                                        <rect key="frame" x="8" y="66" width="201" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$20.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="18L-aO-oo3">
+                                        <rect key="frame" x="312" y="65" width="55" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2db-HX-aMu">
+                                        <rect key="frame" x="167" y="203" width="34" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="View"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Overview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5L8-po-Oad">
+                                        <rect key="frame" x="8" y="95" width="359" height="105"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="q0Y-zD-fHH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="425"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oXc-h6-ZX1"/>
+                    <connections>
+                        <outlet property="overviewLabel" destination="5L8-po-Oad" id="1o7-9C-sfJ"/>
+                        <outlet property="posterImageView" destination="q0Y-zD-fHH" id="SqB-hK-Kwz"/>
+                        <outlet property="priceLabel" destination="18L-aO-oo3" id="8BT-jN-oYG"/>
+                        <outlet property="releaseDateLabel" destination="iGW-o0-eRH" id="stq-Hu-Iu1"/>
+                        <outlet property="titleLabel" destination="ZQh-fO-6eE" id="v1q-hg-uKi"/>
+                        <outlet property="viewBtn" destination="2db-HX-aMu" id="lNx-zJ-koU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EmT-n9-tLZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="397.5" y="-83.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zfs-z7-LT7">
