@@ -18,9 +18,15 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var viewBtn: UIButton!
     var movie: NSDictionary!
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var infoView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //set contentsize so scrollView knows how much to scroll
+        scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: infoView.frame.origin.y + infoView.frame.size.height)
+        
         //get the title
         let titleDic = movie["title"] as? NSDictionary
         let title = titleDic?["label"] as! String
@@ -48,6 +54,7 @@ class DetailViewController: UIViewController {
         
         titleLabel.text = title
         overviewLabel.text = summary
+        overviewLabel.sizeToFit()
         releaseDateLabel.text = releaseDate
         priceLabel.text = price
         

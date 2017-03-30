@@ -153,6 +153,7 @@ class MoviesViewController: UIViewController,UITableViewDataSource, UITableViewD
         let indexPath = tableView.indexPath(for: cell)
         let movie = filteredData![indexPath!.row]
         
+        //DetailViewController is the custume class
         let detailViewController = segue.destination as! DetailViewController
         detailViewController.movie = movie
 
