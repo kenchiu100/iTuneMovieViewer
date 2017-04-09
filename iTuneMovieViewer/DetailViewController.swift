@@ -15,7 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
-    @IBOutlet weak var viewBtn: UIButton!
+//    @IBOutlet weak var viewBtn: UIButton!
     var movie: NSDictionary!
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -63,6 +63,14 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func viewInItunes(_ sender: UIButton) {
+        UIApplication.shared.openURL(NSURL(string: "itms://itunes.apple.com/us/movie/moana-2016/id1175204079?uo=2")! as URL)
+        
+
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

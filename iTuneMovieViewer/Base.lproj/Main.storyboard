@@ -133,9 +133,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2db-HX-aMu">
-                                                <rect key="frame" x="8" y="91" width="34" height="30"/>
+                                                <rect key="frame" x="8" y="91" width="131" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="View"/>
+                                                <state key="normal" title="View in iTunes"/>
+                                                <connections>
+                                                    <action selector="viewInItunes:" destination="eCn-py-HFi" eventType="touchUpInside" id="VoV-Y2-1Hh"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -154,7 +157,6 @@
                         <outlet property="releaseDateLabel" destination="iGW-o0-eRH" id="stq-Hu-Iu1"/>
                         <outlet property="scrollView" destination="ueU-RE-Y2W" id="7ch-3p-v5G"/>
                         <outlet property="titleLabel" destination="ZQh-fO-6eE" id="v1q-hg-uKi"/>
-                        <outlet property="viewBtn" destination="2db-HX-aMu" id="lNx-zJ-koU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EmT-n9-tLZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
