@@ -64,8 +64,13 @@ class DetailViewController: UIViewController {
     }
 
     @IBAction func viewInItunes(_ sender: UIButton) {
-        UIApplication.shared.openURL(NSURL(string: "itms://itunes.apple.com/us/movie/moana-2016/id1175204079?uo=2")! as URL)
         
+        //get the url link of the itunes
+        let idDic = movie["id"] as! NSDictionary
+        let idString = idDic["label"] as? String
+        let idUrl = URL(string: idString!)
+        
+        UIApplication.shared.openURL(idUrl!)
 
     }
     

@@ -145,6 +145,7 @@
 				TargetAttributes = {
 					BE8809181E89CDF5001ED024 = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = SJU8P9WP4A;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -362,6 +363,7 @@
 			baseConfigurationReference = 44D21BEE9AD028D194A50095 /* Pods-iTuneMovieViewer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SJU8P9WP4A;
 				INFOPLIST_FILE = iTuneMovieViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ken.iTuneMovieViewer;
@@ -375,6 +377,7 @@
 			baseConfigurationReference = AE56BF08282EDDB9514E86B2 /* Pods-iTuneMovieViewer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SJU8P9WP4A;
 				INFOPLIST_FILE = iTuneMovieViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ken.iTuneMovieViewer;
